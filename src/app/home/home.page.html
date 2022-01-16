@@ -1,0 +1,89 @@
+<!-- <ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Worte
+    </ion-title>
+  </ion-toolbar>
+</ion-header> -->
+
+<ion-content [fullscreen]="true">
+
+  <ion-fab vertical="top" horizontal="end" slot="fixed">
+    <ion-fab-button color="dark">
+      <ion-icon name="chevron-down-circle-outline"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-list side="bottom">
+      <ion-fab-button (click)="openGame()"><ion-icon name="bar-chart-outline"></ion-icon></ion-fab-button>
+      <ion-fab-button (click)="openAbout()"><ion-icon name="heart-outline"></ion-icon></ion-fab-button>
+      <ion-fab-button (click)="openRules()"><ion-icon name="help-outline"></ion-icon></ion-fab-button>
+    </ion-fab-list>
+  </ion-fab>
+
+<!--  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Blank</ion-title>
+    </ion-toolbar>
+  </ion-header>-->
+
+  <div id="container">
+
+    <div id="title">
+      <div id="zeile-1">{{title}}</div>
+      <div id="zeile-2">Täglich 1 Wort, 5 Buchstaben, 6 Versuche</div>
+    </div>
+
+    <div id="worte" [class.finished]="finished">
+      <div [class.full]="isFullWord(wordIndex)" [class.status]="" class="row" *ngFor="let row of createRange(6); let wordIndex = index">
+        <div *ngFor="let col of createRange(5); let charIndex = index"  [class.used]="isUsedChar(wordIndex, charIndex)" [class.active]="isActiveCell(wordIndex, charIndex)" 
+        [ngClass]="['char', 'status_' + getStatus(wordIndex, charIndex)]">{{getContent(wordIndex, charIndex)}}</div>
+        <div *ngIf="isInvalidWord(wordIndex)" class="hinweis-unbekanntes-wort">
+          <div>
+            <svg width="20" height="20">
+              <polygon points="0,20 10,0 20,20 0,20" />
+              <circle cx="50" cy="50" r="40" stroke="green" stroke-width="4" fill="yellow" />
+            </svg>
+            Dieses Wort kenne ich nicht.</div>  
+        </div>
+      </div>
+    </div>
+    
+    <div id="keyboard" [class.finished]="finished">
+      <div *ngFor="let row of getKeys()"  class="row">
+        <button (click)="enterKey(key)" [class.active]="isActiveKey(key)" [class.back]="key === 'back'" [class.enter]="key === 'enter'" *ngFor="let key of row">{{key === 'back' ? '⌫' : (key === 'enter' ? 'OK' : key)}}</button>
+      </div>
+    </div>
+  
+  </div>
+
+  <div *ngIf="showSuccessMessage" id="success-message" [class.visible]="showSuccessMessage">
+
+    <div class="bold">Herzlichen Glückwunsch!</div>
+
+    <div class="large-icon">👑</div>
+
+    <statistic></statistic>
+
+    <button (click)="showSuccessMessage = false;">Weiter</button>
+
+  </div>
+
+
+  <div *ngIf="showFailureMessage" id="failure-message">
+
+    <div class="bold">Leider nein!</div>
+
+    <div class="large-icon">😿</div>
+
+    <div>Das gesuchte Wort war</div>
+    
+      <div class="failure-chars" >
+        <div *ngFor="let range of createRange(5); let charIndex = index" class="char">{{getTarget().charAt(charIndex)}}</div>
+      </div>
+    
+      <div>Das nächste Wort wird demnächst freigeschaltet.</div>
+
+    <button (click)="showFailureMessage = false;">Weiter</button>
+
+  </div>
+
+</ion-content>

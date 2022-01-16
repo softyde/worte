@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>W O R T E</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="dismiss()">
+        <ion-icon slot="icon-only" name="close-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content class="ion-padding">
+
+  <p><span class="worte-name">Worte</span> lässt dich jeden Tag ein Wort erraten. Das Wort besteht immer aus fünf Buchstaben und Du hast immer sechs Versuche.</p>
+
+  <p><span class="worte-name">Worte</span> will ein langsames Spiel sein. Du hast immer einen ganzen Tag Zeit. Es gibt nichts zu verlieren und nichts zu gewinnen.</p>
+  <p>Es gibt keine <i>Erfolge</i> in sozialen Medien, nichts zu kaufen und nichts zu bezahlen. Nur Du und das Wort.</p>
+
+  <p>Nach jedem Versuch zeigt Dir <span class="worte-name">Worte</span> an, welche Buchstaben richtig erraten wurden:</p>
+
+  <div>
+    <div class="char-container">
+      <div class="char ok">P</div><div><i>dieser Buchstabe steht schon an der richtigen Position</i></div>
+    </div>
+    <div class="char-container">
+      <div class="char fail">A</div><div><i>dieser Buchstabe kommt zwar im gesuchten Wort vor, aber er steht an einer anderen Position</i></div>
+    </div>
+  </div>
+
+  <p>Natürlich kann ein Buchstabe auch mehrmals im gesuchten Wort enthalten sein.</p>
+
+  <p>Ein neues Wort erscheint jeden Mittag.</p>
+  
+  <p><i>Viel Spaß!</i></p>
+
+</ion-content>

@@ -1,0 +1,7 @@
+{
+  "name": "Worte",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

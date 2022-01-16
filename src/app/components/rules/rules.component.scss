@@ -1,0 +1,45 @@
+.worte-name {
+    font-variant: small-caps; 
+}
+
+.char-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.char { 
+    width: calc((66vw - 50px) / 5);
+    height: calc((66vw - 50px) / 5);
+
+    min-width: calc((66vw - 50px) / 5);
+    min-height: calc((66vw - 50px) / 5);
+
+    color: black;
+
+    &.ok {
+        background-color: #c5aa0e;
+    }
+
+    &.fail {
+        background: repeating-linear-gradient(
+            -45deg,
+          #c5aa0e,
+          #c5aa0e 5px,
+          #888 5px,
+          #888 10px
+        );
+    }
+    
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 5vw;
+    font-weight: 800;
+
+    margin: 5px;
+    margin-right: 10px;
+    border-radius: 5px;
+}

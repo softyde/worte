@@ -1,0 +1,6 @@
+{
+	"appId": "de.annee.worte",
+	"appName": "Worte",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}

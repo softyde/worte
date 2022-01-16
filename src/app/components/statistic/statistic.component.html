@@ -1,0 +1,48 @@
+<div class="statistic-table">
+
+  <table>
+    <tr>
+      
+      <td class="align-right">
+        {{(data.words == 0 ? 'kein' : data.words)}}
+      </td>
+      <td>
+        {{(data.words <= 1 ? 'Wort' : 'Wörter' )}}
+      </td>
+      
+    </tr>
+
+    <tr>
+      <td class="align-right">
+        {{(data.currentStreak == 0 ? 'keine' : data.currentStreak)}}
+      </td>
+      <td>
+        Aktuelle Serie
+      </td>
+      
+    </tr>
+
+    <tr>
+      <td class="align-right">
+        {{(data.longestStreak == 0 ? 'keine' : data.longestStreak)}}
+      </td>
+      <td>
+        Längste Serie
+      </td>
+      
+    </tr>
+
+    <tr *ngFor="let value of data.tries; index as i">
+      <td class="align-right">
+        {{i + 1}}. Versuch
+      </td>
+      
+      <td>
+        <span class="bar-container"><div [style.width]="getLength(i)"></div></span> {{value}}
+      </td>
+      
+    </tr>
+
+  </table>
+
+</div>
