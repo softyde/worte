@@ -57,7 +57,7 @@ $ arch -x86_64 pod install
 
 ## (n)FAQ
 
-### Was soll denn "erlzen" für ein Wort sein?
+### Was soll denn "erzen" für ein Wort sein?
 
 > Wenn die App irgendwelche Wörter nicht erkennt oder ein unsinniges Wort verwendet,  dann darfst Du das gerne melden. Ich werde die verwendeten Listen dann entsprechend anpassen.
 
