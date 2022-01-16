@@ -6,6 +6,10 @@ Ein einfaches Ratespiel, angelehnt an das "Mastermind"-Spiel. In dieser Form hab
 
 Dieses Repository enthält **nicht** die Quellen für das Server-Backend und auch nicht die Liste der Wörter, die ich verwende.
 
+## So siehts aus
+
+![Screenshot](./doc/img/screenshot_01.png "Screenshot")
+
 ## Requirements / technische Umsetzung
 
 - Ionic + Capacitor
