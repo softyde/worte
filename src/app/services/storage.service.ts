@@ -6,6 +6,9 @@ import { HTTP } from '@awesome-cordova-plugins/http/ngx';
 
 import { Badge } from '@awesome-cordova-plugins/badge/ngx';
 
+import { environment } from '../../environments/environment';
+
+
 export interface Settings {
   firstRun: boolean;
 
@@ -125,9 +128,8 @@ export class StorageService {
 
       console.log(`looking for new word (${currentSetings.wort_id})`);
 
-
-      let url = 'FIXMEFORPRODUCTION';
-      let header = {'x-none': 'fixme'};
+      let url = `${environment.apiEndpoint}?liste_id=${currentSetings.liste_id}`;
+      let header = environment.additionalHeader;
 
       let result = await this._http.get(url,  
         {}, header);
