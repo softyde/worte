@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
-
+import { AppVersion } from '@awesome-cordova-plugins/app-version/ngx';
 
 @Component({
   selector: 'app-about',
@@ -9,7 +9,14 @@ import { ModalController } from '@ionic/angular';
 })
 export class AboutComponent implements OnInit {
 
-  constructor(private _modal: ModalController) { }
+  public version: string = '0';
+
+  constructor(private _modal: ModalController, private _appVersion: AppVersion) { 
+
+    _appVersion.getVersionNumber().then(value => {
+      this.version = value;
+    })
+  }
 
   ngOnInit() {}
 
