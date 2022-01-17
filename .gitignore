@@ -35,3 +35,5 @@ PRIVATE.md
 
 android/app/google-services.json
 /*/build/
+
+environment.prod.ts
