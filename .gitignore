@@ -17,8 +17,6 @@ $RECYCLE.BIN/
 log.txt
 npm-debug.log*
 
-PRIVATE.md
-
 /.angular
 /.idea
 /.ionic
@@ -36,4 +34,5 @@ PRIVATE.md
 android/app/google-services.json
 /*/build/
 
-environment.prod.ts
+src/environments/environment.prod.ts
+PRIVATE.md
